@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
     {
       year: '2020',
       title: 'Company Founded',
-      description: 'Global Sport was born from a vision to revolutionize gaming'
+      description: 'GlobalSport was born from a vision to revolutionize gaming'
     },
     {
       year: '2021',
@@ -96,7 +96,7 @@ const AboutPage: React.FC = () => {
         {/* Hero Section */}
         <div className="hero-section">
           <div className="hero-content">
-            <h1 className="hero-title">About Global Sport</h1>
+            <h1 className="hero-title">About GlobalSport</h1>
             <p className="hero-subtitle">
               We're revolutionizing the gaming industry with innovative cloud technology, 
               exclusive content, and an unparalleled gaming experience for millions worldwide.
@@ -117,7 +117,7 @@ const AboutPage: React.FC = () => {
           <div className="section-content">
             <h2 className="section-title">Our Mission</h2>
             <p className="section-description">
-              At Global Sport, we believe gaming should be accessible to everyone, everywhere. 
+              At GlobalSport, we believe gaming should be accessible to everyone, everywhere. 
               Our mission is to break down barriers and create a seamless gaming experience 
               that connects players across the globe through cutting-edge cloud technology 
               and an ever-expanding library of amazing games.
@@ -225,9 +225,9 @@ const AboutPage: React.FC = () => {
               Have questions or want to partner with us? We'd love to hear from you!
             </p>
             <div className="contact-methods">
-              <a href="mailto:hello@Global Sport.com" className="contact-method">
+              <a href="mailto:hello@GlobalSport.com" className="contact-method">
                 <span className="contact-icon">📧</span>
-                <span>hello@Global Sport.com</span>
+                <span>hello@GlobalSport.com</span>
               </a>
               <a href="tel:+1234567890" className="contact-method">
                 <span className="contact-icon">📞</span>

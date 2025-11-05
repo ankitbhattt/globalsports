@@ -174,7 +174,7 @@ const VideoCategories: React.FC<VideoCategoriesProps> = ({ onVideoClick, onNavig
   
   // Load favorites from localStorage
   useEffect(() => {
-    const storedFavorites = localStorage.getItem('Global Sport_favorites');
+    const storedFavorites = localStorage.getItem('GlobalSport_favorites');
     if (storedFavorites) {
       setFavorites(new Set(JSON.parse(storedFavorites)));
     }
@@ -189,7 +189,7 @@ const VideoCategories: React.FC<VideoCategoriesProps> = ({ onVideoClick, onNavig
       newFavorites.add(videoName);
     }
     setFavorites(newFavorites);
-    localStorage.setItem('Global Sport_favorites', JSON.stringify(Array.from(newFavorites)));
+    localStorage.setItem('GlobalSport_favorites', JSON.stringify(Array.from(newFavorites)));
   };
   
   const handleViewAll = (e: React.MouseEvent) => {

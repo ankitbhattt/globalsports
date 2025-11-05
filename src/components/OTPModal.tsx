@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './OTPModal.css';
+import GlobalSportLogo from './GlobalSportLogo';
 
 interface OTPModalProps {
   phoneNumber: string;
@@ -68,25 +69,8 @@ const OTPModal: React.FC<OTPModalProps> = ({ phoneNumber, onVerify, onClose }) =
         <button className="close-button" onClick={onClose}>×</button>
         
         <div className="otp-header">
-          <div className="Global Sport-logo-container-custom">
-            <div className="modal-play-icon">
-              <svg viewBox="0 0 100 100" className="modal-play-svg">
-                <defs>
-                  <linearGradient id="otpGlobal SportGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#dc2626" />
-                    <stop offset="50%" stopColor="#f97316" />
-                    <stop offset="100%" stopColor="#fbbf24" />
-                  </linearGradient>
-                </defs>
-                <circle cx="50" cy="50" r="45" fill="url(#otpGlobal SportGradient)" className="modal-play-circle" />
-                <path d="M 40 30 L 40 70 L 65 50 Z" fill="white" className="modal-play-triangle" />
-                <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2" className="modal-play-ring" />
-              </svg>
-            </div>
-            <div className="modal-logo-text">
-              <span className="modal-text-snap" style={{ color: '#f97316', backgroundColor: 'transparent' }}>SNAP</span>
-              <span className="modal-text-flix" style={{ color: '#fbbf24', backgroundColor: 'transparent' }}>FLIX</span>
-            </div>
+          <div className="GlobalSport-logo-container-custom">
+            <GlobalSportLogo size="medium" animated={true} />
           </div>
           <h2 className="otp-title">Verify Your Phone</h2>
           <p className="otp-description">
@@ -146,7 +130,7 @@ const OTPModal: React.FC<OTPModalProps> = ({ phoneNumber, onVerify, onClose }) =
             onClick={handleVerify}
             disabled={!otp.every(digit => digit !== '')}
             style={{
-              background: 'linear-gradient(135deg, #dc2626, #b91c1c)',
+              background: 'linear-gradient(135deg, #FF9500 0%, #FF8C00 100%)',
               opacity: !otp.every(digit => digit !== '') ? 0.6 : 1
             }}
           >

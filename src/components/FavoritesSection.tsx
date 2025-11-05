@@ -18,7 +18,7 @@ const FavoritesSection: React.FC<FavoritesSectionProps> = ({ onVideoClick, onNav
 
   useEffect(() => {
     const loadFavorites = () => {
-      const stored = localStorage.getItem('Global Sport_favorites');
+      const stored = localStorage.getItem('GlobalSport_favorites');
       if (stored) {
         const favoriteNames = new Set(JSON.parse(stored));
         

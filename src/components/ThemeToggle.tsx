@@ -10,7 +10,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ onThemeChange }) => {
 
   useEffect(() => {
     // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('Global Sport-theme');
+    const savedTheme = localStorage.getItem('GlobalSport-theme');
     if (savedTheme) {
       setIsDark(savedTheme === 'dark');
     }
@@ -19,7 +19,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ onThemeChange }) => {
   const toggleTheme = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
-    localStorage.setItem('Global Sport-theme', newTheme ? 'dark' : 'light');
+    localStorage.setItem('GlobalSport-theme', newTheme ? 'dark' : 'light');
     
     // Apply theme to document
     document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');

@@ -7,10 +7,10 @@ const ProfilePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [isEditing, setIsEditing] = useState(false);
 
-  // User data for Global Sport streaming service
+  // User data for GlobalSport streaming service
   const userData = {
     name: 'John Doe',
-    email: 'john.doe@Global Sport.com',
+    email: 'john.doe@GlobalSport.com',
     phone: '+91 9876543210',
     memberSince: 'January 2024',
     subscription: 'Premium Monthly',

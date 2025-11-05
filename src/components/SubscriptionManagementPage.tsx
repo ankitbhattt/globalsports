@@ -114,7 +114,7 @@ const SubscriptionManagementPage: React.FC<SubscriptionManagementPageProps> = ({
             Back to Profile
           </button>
           <h1 className="page-title">Subscription Management</h1>
-          <p className="page-subtitle">Manage your Global Sport subscription and billing</p>
+          <p className="page-subtitle">Manage your GlobalSport subscription and billing</p>
         </div>
 
         {/* Current Subscription Card */}

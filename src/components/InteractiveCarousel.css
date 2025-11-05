@@ -3,7 +3,7 @@
   height: 60vh;
   min-height: 500px;
   max-height: 700px;
-  background: linear-gradient(135deg, #0f1419 0%, #0f1419 50%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%) 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   overflow: hidden;
   border-radius: 16px;
   margin: 60px 0 40px 0;
@@ -67,7 +67,7 @@
   color: white;
   margin: 0 0 20px 0;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-  background: linear-gradient(135deg, #ffffff 0%, #FF8C00 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #FF9500 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,14 +107,14 @@
 }
 
 .slide-button.primary {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
 }
 
 .slide-button.primary:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 25px rgba(255, 140, 0, 0.6);
-  background: linear-gradient(135deg, #ef4444, #FF8C00);
+  background: linear-gradient(135deg, #ef4444, #FF9500);
 }
 
 .slide-button.secondary {
@@ -324,7 +324,7 @@
 .pulse-ring {
   width: 14px;
   height: 14px;
-  background: #FF8C00;
+  background: #FF9500;
   border-radius: 50%;
   position: relative;
   animation: pulseRing 2s ease-out infinite;
@@ -394,7 +394,7 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background: #FF8C00;
+  background: #FF9500;
   border-radius: 50%;
   animation: floatParticle 3s ease-in-out infinite;
 }
@@ -470,7 +470,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  background: linear-gradient(135deg, #ffffff, #FF8C00);
+  background: linear-gradient(135deg, #ffffff, #FF9500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -505,7 +505,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -575,7 +575,7 @@
 
 .info-features li::before {
   content: "✓";
-  color: #FF8C00;
+  color: #FF9500;
   font-weight: bold;
   font-size: 16px;
 }
@@ -618,7 +618,7 @@
 }
 
 .progress-dot.active {
-  background: #FF8C00;
+  background: #FF9500;
   transform: scale(1.3);
   box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
 }
@@ -692,7 +692,7 @@
 }
 
 .carousel-dot.active {
-  background: #FF8C00;
+  background: #FF9500;
   border-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.3);
   box-shadow: 0 0 15px rgba(255, 140, 0, 0.6);

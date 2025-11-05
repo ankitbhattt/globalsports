@@ -27,7 +27,7 @@ const FAQPage: React.FC = () => {
   const faqItems: FAQItem[] = [
     {
       id: 1,
-      question: 'How do I create an account on Global Sport?',
+      question: 'How do I create an account on GlobalSport?',
       answer: 'Creating an account is easy! Simply click on the "Sign Up" button in the top navigation, enter your email address and create a secure password. You can also sign up using your Google or Facebook account for faster registration.',
       category: 'account',
       icon: '👤'
@@ -48,7 +48,7 @@ const FAQPage: React.FC = () => {
     },
     {
       id: 4,
-      question: 'What games are available on Global Sport?',
+      question: 'What games are available on GlobalSport?',
       answer: 'We have a vast library of over 10,000 games across multiple genres including action, adventure, puzzle, RPG, and more. New games are added weekly, and we feature exclusive titles you won\'t find anywhere else. Browse our catalog to discover your next favorite game.',
       category: 'games',
       icon: '🎮'
@@ -70,7 +70,7 @@ const FAQPage: React.FC = () => {
     {
       id: 7,
       question: 'What devices are supported?',
-      answer: 'Global Sport is available on Windows, Mac, iOS, Android, and web browsers. We also support gaming consoles like PlayStation and Xbox. Your progress syncs across all devices when you\'re logged in with the same account.',
+      answer: 'GlobalSport is available on Windows, Mac, iOS, Android, and web browsers. We also support gaming consoles like PlayStation and Xbox. Your progress syncs across all devices when you\'re logged in with the same account.',
       category: 'technical',
       icon: '🔧'
     },
@@ -91,14 +91,14 @@ const FAQPage: React.FC = () => {
     {
       id: 10,
       question: 'How do I contact customer support?',
-      answer: 'You can reach our support team 24/7 through live chat on our website, email at support@Global Sport.com, or by submitting a ticket through your account dashboard. Premium subscribers get priority support.',
+      answer: 'You can reach our support team 24/7 through live chat on our website, email at support@GlobalSport.com, or by submitting a ticket through your account dashboard. Premium subscribers get priority support.',
       category: 'account',
       icon: '👤'
     },
     {
       id: 11,
-      question: 'What are Global Sport Originals?',
-      answer: 'Global Sport Originals are exclusive games developed specifically for our platform. These games feature unique storylines, characters, and gameplay mechanics that you won\'t find anywhere else. They\'re included with your subscription at no extra cost.',
+      question: 'What are GlobalSport Originals?',
+      answer: 'GlobalSport Originals are exclusive games developed specifically for our platform. These games feature unique storylines, characters, and gameplay mechanics that you won\'t find anywhere else. They\'re included with your subscription at no extra cost.',
       category: 'features',
       icon: '⚡'
     },
@@ -129,7 +129,7 @@ const FAQPage: React.FC = () => {
         {/* Header */}
         <div className="faq-header">
           <h1 className="faq-main-title">Frequently Asked Questions</h1>
-          <p className="faq-subtitle">Find answers to common questions about Global Sport</p>
+          <p className="faq-subtitle">Find answers to common questions about GlobalSport</p>
         </div>
 
         {/* Search Bar */}

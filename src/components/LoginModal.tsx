@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LoginModal.css';
 import { useTranslation } from '../contexts/TranslationContext';
+import GlobalSportLogo from './GlobalSportLogo';
 
 interface LoginModalProps {
   onSubmit: (phone: string) => void;
@@ -76,24 +77,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onSubmit, onClose }) => {
 
         <div className="modal-header">
           <div className="modal-logo-custom">
-            <div className="modal-play-icon">
-              <svg viewBox="0 0 100 100" className="modal-play-svg">
-                <defs>
-                  <linearGradient id="modalGlobal SportGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#dc2626" />
-                    <stop offset="50%" stopColor="#f97316" />
-                    <stop offset="100%" stopColor="#fbbf24" />
-                  </linearGradient>
-                </defs>
-                <circle cx="50" cy="50" r="45" fill="url(#modalGlobal SportGradient)" className="modal-play-circle" />
-                <path d="M 40 30 L 40 70 L 65 50 Z" fill="white" className="modal-play-triangle" />
-                <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2" className="modal-play-ring" />
-              </svg>
-            </div>
-            <div className="modal-logo-text">
-              <span className="modal-text-snap" style={{ color: '#f97316', backgroundColor: 'transparent' }}>SNAP</span>
-              <span className="modal-text-flix" style={{ color: '#fbbf24', backgroundColor: 'transparent' }}>FLIX</span>
-            </div>
+            <GlobalSportLogo size="medium" animated={true} />
           </div>
           <h1 className="modal-title">{t('login.welcome')}</h1>
         </div>
@@ -128,7 +112,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onSubmit, onClose }) => {
             className="send-otp-button"
             disabled={!validateMobileNumber(phone)}
             style={{
-              background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+              background: 'linear-gradient(135deg, #FF9500 0%, #FF8C00 100%)',
               opacity: !validateMobileNumber(phone) ? 0.6 : 1
             }}
           >

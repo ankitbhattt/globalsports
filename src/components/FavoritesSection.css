@@ -17,7 +17,7 @@
   font-weight: bold;
   color: white;
   margin: 0;
-  background: linear-gradient(135deg, #FF8C00, #ff6b6b);
+  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -35,7 +35,7 @@
 }
 
 .view-all-btn:hover {
-  color: #FF8C00;
+  color: #FF9500;
   transform: translateX(5px);
 }
 
@@ -46,7 +46,7 @@
 }
 
 .favorite-card {
-  background: linear-gradient(145deg, #2a2a2a, #0f1419);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%));
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -56,7 +56,7 @@
 
 .favorite-card:hover {
   transform: translateY(-8px);
-  border-color: #FF8C00;
+  border-color: #FF9500;
   box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
 }
 
@@ -97,7 +97,7 @@
 }
 
 .favorite-badge {
-  background: linear-gradient(135deg, #FF8C00, #ff6b6b);
+  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
   color: white;
   padding: 5px 12px;
   border-radius: 20px;

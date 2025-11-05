@@ -1,6 +1,6 @@
 .news-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f1419 0%, #0f1419 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%) 100%);
   padding: 40px 20px;
   position: relative;
 }
@@ -104,7 +104,7 @@
 .live-news-card.large {
   width: 300px;
   height: 200px;
-  background: linear-gradient(45deg, #FF8C00, #ef4444, #FF8C00);
+  background: linear-gradient(45deg, #FF9500, #ef4444, #FF9500);
   background-size: 400% 400%;
   animation: sparkle 3s ease-in-out infinite;
 }
@@ -112,7 +112,7 @@
 .live-news-card.small {
   width: 150px;
   height: 100px;
-  background: linear-gradient(45deg, #FF8C00, #ef4444, #FF8C00);
+  background: linear-gradient(45deg, #FF9500, #ef4444, #FF9500);
   background-size: 400% 400%;
   animation: sparkle 3s ease-in-out infinite;
 }
@@ -139,7 +139,7 @@
 
 .live-red {
   background: rgba(30, 41, 59, 0.8);
-  color: #FF8C00;
+  color: #FF9500;
   padding: 8px 16px;
   border-radius: 6px;
   font-weight: bold;
@@ -149,7 +149,7 @@
 }
 
 .news-white {
-  background: #0f1419;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   color: white;
   padding: 8px 16px;
   border-radius: 6px;
@@ -215,7 +215,7 @@
 }
 
 .gaming-text {
-  background: #FF8C00;
+  background: #FF9500;
   color: white;
   padding: 8px 16px;
   border-radius: 6px;
@@ -243,7 +243,7 @@
 }
 
 .article-snippet {
-  background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%) 100%);
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);

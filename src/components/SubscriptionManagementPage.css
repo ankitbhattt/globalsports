@@ -1,6 +1,6 @@
 .subscription-management-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f0f0f 0%, #0f1419 50%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   padding: 40px 20px;
   position: relative;
   overflow: hidden;
@@ -57,7 +57,7 @@
   font-size: 36px;
   font-weight: 700;
   margin: 0 0 10px 0;
-  background: linear-gradient(135deg, #ffffff 0%, #FF8C00 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #FF9500 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -202,13 +202,13 @@
 }
 
 .action-button.primary {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
 }
 
 .action-button.primary:hover {
-  background: linear-gradient(135deg, #FF6600, #FF6600);
+  background: linear-gradient(135deg, #FF8C00, #FF8C00);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
 }
@@ -335,7 +335,7 @@
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #FF8C00, #f97316);
+  background: linear-gradient(90deg, #FF9500, #f97316);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -613,13 +613,13 @@
 }
 
 .modal-button.danger {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
 }
 
 .modal-button.danger:hover {
-  background: linear-gradient(135deg, #FF6600, #FF6600);
+  background: linear-gradient(135deg, #FF8C00, #FF8C00);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
 }

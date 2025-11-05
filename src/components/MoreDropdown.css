@@ -59,7 +59,7 @@
 }
 
 .menu-header {
-  background-color: #0f1419;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   color: white;
   font-size: 12px;
   font-weight: 600;
@@ -85,8 +85,8 @@
 
 .category-item:hover {
   background-color: rgba(255, 140, 0, 0.1);
-  border-left-color: #FF8C00;
-  color: #FF8C00;
+  border-left-color: #FF9500;
+  color: #FF9500;
 }
 
 .category-item:active {

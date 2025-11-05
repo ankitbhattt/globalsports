@@ -154,7 +154,7 @@ const SubscriptionPage: React.FC = () => {
       <div className="subscription-container">
         {/* Header Section */}
         <div className="subscription-header">
-          <h1 className="main-title">Choose Your <span className="highlight">Global Sport</span> Plan</h1>
+          <h1 className="main-title">Choose Your <span className="highlight">GlobalSport</span> Plan</h1>
           <p className="subtitle">Unlock unlimited video content and premium features</p>
         </div>
 
@@ -282,7 +282,7 @@ const SubscriptionPage: React.FC = () => {
                   <div className="payment-details">
                     <div className="merchant-info">
                       <span>Pay to:</span>
-                      <span>Global Sport Gaming</span>
+                      <span>GlobalSport Gaming</span>
                     </div>
                     <div className="amount-info">
                       <span>Amount:</span>
@@ -357,7 +357,7 @@ const SubscriptionPage: React.FC = () => {
                 <div className="payment-success">
                   <div className="success-icon">✅</div>
                   <h3>Payment Successful!</h3>
-                  <p>Your Global Sport subscription has been activated</p>
+                  <p>Your GlobalSport subscription has been activated</p>
                   <div className="success-details">
                     <div className="detail-item">
                       <span>Transaction ID:</span>
@@ -373,7 +373,7 @@ const SubscriptionPage: React.FC = () => {
                     </div>
                   </div>
                   <button className="continue-btn" onClick={closePaymentModal}>
-                    Continue to Global Sport
+                    Continue to GlobalSport
                   </button>
                 </div>
               )}

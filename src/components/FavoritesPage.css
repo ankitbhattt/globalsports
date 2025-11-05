@@ -74,7 +74,7 @@
 }
 
 .favorite-card-page {
-  background: linear-gradient(145deg, #2a2a2a, #0f1419);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%));
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -84,7 +84,7 @@
 
 .favorite-card-page:hover {
   transform: translateY(-10px);
-  border-color: #FF8C00;
+  border-color: #FF9500;
   box-shadow: 0 15px 40px rgba(255, 140, 0, 0.4);
 }
 
@@ -139,7 +139,7 @@
 }
 
 .favorite-badge-page {
-  background: linear-gradient(135deg, #FF8C00, #ff6b6b);
+  background: linear-gradient(135deg, #FF9500, #ff6b6b);
   color: white;
   padding: 8px 15px;
   border-radius: 25px;

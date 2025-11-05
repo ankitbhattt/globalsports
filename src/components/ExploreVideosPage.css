@@ -13,7 +13,7 @@
 .explore-main-title {
   font-size: 3.5rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #FF8C00, #f97316, #3b82f6);
+  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -46,7 +46,7 @@
 }
 
 .category-card {
-  background: linear-gradient(145deg, #2a2a2a, #0f1419);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -62,7 +62,7 @@
 }
 
 .category-card.selected {
-  border-color: #FF8C00;
+  border-color: #FF9500;
   box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
 }
 
@@ -165,7 +165,7 @@
 }
 
 .explore-btn {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -180,7 +180,7 @@
 }
 
 .explore-btn:hover {
-  background: linear-gradient(135deg, #FF6600, #FF6600);
+  background: linear-gradient(135deg, #FF8C00, #FF8C00);
   transform: translateX(5px);
   box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
 }
@@ -234,14 +234,14 @@
 
 .preview-video-card:hover {
   transform: scale(1.05);
-  border-color: #FF8C00;
+  border-color: #FF9500;
   box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
 }
 
 .preview-thumbnail {
   width: 100%;
   aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #FF8C00, #f97316);
+  background: linear-gradient(135deg, #FF9500, #f97316);
   position: relative;
   object-fit: cover;
   display: block;
@@ -269,7 +269,7 @@
 
 .preview-video-card:hover .preview-play-btn {
   transform: scale(1.2);
-  background: #FF8C00;
+  background: #FF9500;
 }
 
 .preview-duration {

@@ -24,15 +24,16 @@
 }
 
 .modal-content {
-  background: linear-gradient(145deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%) 0%, #1a1f2e 50%, #1e293b 100%);
   border-radius: 24px;
   padding: 50px 32px 32px 32px;
   width: 100%;
   max-width: 420px;
   position: relative;
   box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 149, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
   animation: none !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: visible;
@@ -303,7 +304,7 @@
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #FF8C00, #f97316);
+  background: linear-gradient(90deg, #FF9500, #f97316);
   border-radius: 2px;
   transition: width 0.3s ease;
   opacity: 0;
@@ -329,14 +330,14 @@
 }
 
 .otp-input:focus {
-  border-color: #FF8C00 !important;
+  border-color: #FF9500 !important;
   box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
   background-color: transparent !important;
   color: white !important;
 }
 
 .otp-input.filled {
-  border-color: #FF8C00 !important;
+  border-color: #FF9500 !important;
   background-color: transparent !important;
   color: white !important;
 }
@@ -384,7 +385,7 @@
 }
 
 .resend-timer {
-  color: #FF8C00;
+  color: #FF9500;
   font-size: 14px;
   font-weight: 600;
   margin: 0;
@@ -399,7 +400,7 @@
 .resend-button {
   background: rgba(255, 140, 0, 0.1);
   border: 2px solid rgba(255, 140, 0, 0.3);
-  color: #FF8C00;
+  color: #FF9500;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -414,7 +415,7 @@
 
 .resend-button:hover {
   background: rgba(255, 140, 0, 0.2);
-  border-color: #FF8C00;
+  border-color: #FF9500;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
 }
@@ -425,7 +426,7 @@
 
 .modal-content .verify-button {
   width: 100% !important;
-  background: linear-gradient(135deg, #FF8C00, #FF6600) !important;
+  background: linear-gradient(135deg, #FF9500, #FF8C00) !important;
   color: white !important;
   border: none !important;
   padding: 16px 20px !important;
@@ -443,13 +444,13 @@
 }
 
 .modal-content .verify-button:hover:not(:disabled) {
-  background: linear-gradient(135deg, #FF6600, #FF6600) !important;
+  background: linear-gradient(135deg, #FF8C00, #FF8C00) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4) !important;
 }
 
 .modal-content .verify-button:disabled {
-  background: linear-gradient(135deg, #FF8C00, #FF6600) !important;
+  background: linear-gradient(135deg, #FF9500, #FF8C00) !important;
   cursor: not-allowed !important;
   transform: none !important;
   box-shadow: 0 4px 12px rgba(255, 140, 0, 0.2) !important;
@@ -570,12 +571,12 @@
 
 /* Force red verify button override - highest specificity */
 .modal-content .verify-section .verify-button {
-  background: linear-gradient(135deg, #FF8C00, #FF6600) !important;
+  background: linear-gradient(135deg, #FF9500, #FF8C00) !important;
   color: white !important;
   border: none !important;
 }
 
 .modal-content .verify-section .verify-button:disabled {
-  background: linear-gradient(135deg, #FF8C00, #FF6600) !important;
+  background: linear-gradient(135deg, #FF9500, #FF8C00) !important;
   opacity: 0.6 !important;
 }

@@ -9,7 +9,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FF8C00 0%, #FF6600 100%);
+  background: linear-gradient(135deg, #FF9500 0%, #FF9500 100%);
   border: none;
   cursor: pointer;
   display: flex;
@@ -89,7 +89,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%) 100%);
   border: 2px solid #334155;
   cursor: pointer;
   display: flex;
@@ -120,7 +120,7 @@
 
 .fab-sub-action:hover {
   transform: scale(1.1);
-  border-color: #FF8C00;
+  border-color: #FF9500;
   box-shadow: 
     0 6px 20px rgba(255, 140, 0, 0.3),
     0 0 0 2px rgba(255, 140, 0, 0.2);

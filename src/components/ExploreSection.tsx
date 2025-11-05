@@ -7,7 +7,7 @@ const ExploreSection: React.FC = () => {
   const categories = [
     {
       id: 'originals',
-      name: 'The Global Sport Video Game Originals',
+      name: 'The GlobalSport Video Game Originals',
       icon: '🎮',
       color: '#dc2626'
     },

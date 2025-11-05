@@ -23,7 +23,7 @@ const translations = {
     'header.videos': 'VIDEOS',
     
     // Login Modal
-    'login.welcome': 'Welcome to Global Sport',
+    'login.welcome': 'Welcome to GlobalSport',
     'login.title': 'LOGIN',
     'login.signup': 'SIGN UP',
     'login.subtitle': 'Join millions of users worldwide',
@@ -42,7 +42,7 @@ const translations = {
     'login.features.mobile': 'Mobile First',
     'login.features.streaming': 'Fast Streaming',
     'login.security': 'Your data is encrypted and secure',
-    'login.footer.text': 'New to Global Sport?',
+    'login.footer.text': 'New to GlobalSport?',
     'login.footer.highlight': 'Get started for free!',
     'login.stats.users': '10M+ Users',
     'login.stats.uptime': '99.9% Uptime',
@@ -94,7 +94,7 @@ const translations = {
     
     // Subscription Management
     'subscription.management.title': 'Subscription Management',
-    'subscription.management.subtitle': 'Manage your Global Sport subscription and billing',
+    'subscription.management.subtitle': 'Manage your GlobalSport subscription and billing',
     'subscription.management.back': 'Back to Profile',
     'subscription.management.plan': 'Premium Monthly',
     'subscription.management.status': 'Active',
@@ -181,7 +181,7 @@ const translations = {
     'header.videos': '视频',
     
     // Login Modal
-    'login.welcome': '欢迎来到 Global Sport',
+    'login.welcome': '欢迎来到 GlobalSport',
     'login.title': '登录',
     'login.signup': '注册',
     'login.subtitle': '加入全球数百万用户',
@@ -252,7 +252,7 @@ const translations = {
     
     // Subscription Management
     'subscription.management.title': '订阅管理',
-    'subscription.management.subtitle': '管理您的 Global Sport 订阅和账单',
+    'subscription.management.subtitle': '管理您的 GlobalSport 订阅和账单',
     'subscription.management.back': '返回个人资料',
     'subscription.management.plan': '高级月套餐',
     'subscription.management.status': '活跃',
@@ -339,7 +339,7 @@ const translations = {
     'header.videos': 'VIDÉOS',
     
     // Login Modal
-    'login.welcome': 'Bienvenue sur Global Sport',
+    'login.welcome': 'Bienvenue sur GlobalSport',
     'login.title': 'CONNEXION',
     'login.signup': 'S\'INSCRIRE',
     'login.subtitle': 'Rejoignez des millions d\'utilisateurs dans le monde',
@@ -358,7 +358,7 @@ const translations = {
     'login.features.mobile': 'Mobile First',
     'login.features.streaming': 'Streaming rapide',
     'login.security': 'Vos données sont cryptées et sécurisées',
-    'login.footer.text': 'Nouveau sur Global Sport ?',
+    'login.footer.text': 'Nouveau sur GlobalSport ?',
     'login.footer.highlight': 'Commencez gratuitement !',
     'login.stats.users': '10M+ Utilisateurs',
     'login.stats.uptime': '99,9% Temps de fonctionnement',
@@ -410,7 +410,7 @@ const translations = {
     
     // Subscription Management
     'subscription.management.title': 'Gestion des abonnements',
-    'subscription.management.subtitle': 'Gérez votre abonnement Global Sport et la facturation',
+    'subscription.management.subtitle': 'Gérez votre abonnement GlobalSport et la facturation',
     'subscription.management.back': 'Retour au profil',
     'subscription.management.plan': 'Premium Mensuel',
     'subscription.management.status': 'Actif',

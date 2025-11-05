@@ -45,7 +45,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose }) => {
     { id: 'p1', title: 'Subscription Plans', type: 'page', description: 'View our subscription options' },
     { id: 'p2', title: 'Rewards Program', type: 'page', description: 'Earn points and get rewards' },
     { id: 'p3', title: 'FAQ', type: 'page', description: 'Frequently asked questions' },
-    { id: 'p4', title: 'About Us', type: 'page', description: 'Learn more about Global Sport' }
+    { id: 'p4', title: 'About Us', type: 'page', description: 'Learn more about GlobalSport' }
   ];
 
   useEffect(() => {
@@ -176,7 +176,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose }) => {
           {!searchQuery && recentSearches.length === 0 && (
             <div className="search-placeholder">
               <div className="placeholder-icon">🔍</div>
-              <h3>Search Global Sport</h3>
+              <h3>Search GlobalSport</h3>
               <p>Find games, videos, and more</p>
               <div className="popular-searches">
                 <h4>Popular Searches</h4>

@@ -27,7 +27,7 @@
 .search-modal {
   width: 100%;
   max-width: 700px;
-  background: #0f1419;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   animation: slideDown 0.3s ease-out;
@@ -68,7 +68,7 @@
 }
 
 .search-input-container:focus-within {
-  border-color: #FF8C00;
+  border-color: #FF9500;
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -160,7 +160,7 @@
 .clear-recent {
   background: transparent;
   border: none;
-  color: #FF8C00;
+  color: #FF9500;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -255,7 +255,7 @@
 
 .popular-tag:hover {
   background: rgba(255, 140, 0, 0.2);
-  border-color: #FF8C00;
+  border-color: #FF9500;
   transform: translateY(-2px);
 }
 
@@ -269,7 +269,7 @@
   width: 40px;
   height: 40px;
   border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #FF8C00;
+  border-top-color: #FF9500;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   margin: 0 auto 20px;

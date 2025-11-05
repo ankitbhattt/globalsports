@@ -1,5 +1,5 @@
 .videos-section {
-  background: linear-gradient(135deg, #0f1419 0%, #0f1419 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   padding: 80px 20px;
   position: relative;
   animation: fadeInUp 1s ease-out;
@@ -53,7 +53,7 @@
 }
 
 .video-placeholder {
-  background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%) 100%);
   border-radius: 12px;
   padding: 40px 20px;
   text-align: center;
@@ -68,7 +68,7 @@
 
 .play-button {
   font-size: 3rem;
-  color: #FF8C00;
+  color: #FF9500;
   margin-bottom: 20px;
   display: inline-block;
   transition: transform 0.3s ease;

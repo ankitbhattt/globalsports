@@ -61,7 +61,7 @@ function AppContent() {
     setIsLoggedIn(true);
     setCurrentPage('subscription');
     setNotification({
-      message: 'Welcome to Global Sport!',
+      message: 'Welcome to GlobalSport!',
       type: 'success'
     });
   }, []);

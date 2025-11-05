@@ -17,7 +17,7 @@ const FavoritesPage: React.FC<FavoritesPageProps> = ({ onVideoClick }) => {
 
   useEffect(() => {
     const loadFavorites = () => {
-      const stored = localStorage.getItem('Global Sport_favorites');
+      const stored = localStorage.getItem('GlobalSport_favorites');
       if (stored) {
         const favoriteNames = new Set(JSON.parse(stored));
         
@@ -48,11 +48,11 @@ const FavoritesPage: React.FC<FavoritesPageProps> = ({ onVideoClick }) => {
   }, []);
 
   const handleRemoveFavorite = (videoName: string) => {
-    const stored = localStorage.getItem('Global Sport_favorites');
+    const stored = localStorage.getItem('GlobalSport_favorites');
     if (stored) {
       const favoriteNames = new Set(JSON.parse(stored));
       favoriteNames.delete(videoName);
-      localStorage.setItem('Global Sport_favorites', JSON.stringify(Array.from(favoriteNames)));
+      localStorage.setItem('GlobalSport_favorites', JSON.stringify(Array.from(favoriteNames)));
       setFavoriteVideos(prev => prev.filter(v => v.name !== videoName));
     }
   };

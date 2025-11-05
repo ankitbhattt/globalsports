@@ -1,6 +1,7 @@
 .profile-page {
   min-height: 100vh;
-  background: #0f1419;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%) 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
+  background-attachment: fixed;
   padding: 20px;
   color: white;
 }
@@ -13,7 +14,7 @@
 /* Modern Profile Header */
 .profile-header {
   position: relative;
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 30px;
@@ -26,7 +27,7 @@
   left: 0;
   right: 0;
   height: 150px;
-  background: linear-gradient(135deg, #FF8C00 0%, #FF6600 50%, #7f1d1d 100%);
+  background: linear-gradient(135deg, #FF9500 0%, #FF8C00 50%, #7f1d1d 100%);
   opacity: 0.3;
 }
 
@@ -50,7 +51,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +149,7 @@
 }
 
 .edit-profile-btn {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -181,7 +182,7 @@
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -257,7 +258,7 @@
 
 /* Subscription Status Card */
 .subscription-status-card {
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 16px;
   padding: 30px;
   margin-bottom: 30px;
@@ -295,7 +296,7 @@
 
 .manage-subscription-btn {
   background: rgba(255, 140, 0, 0.1);
-  color: #FF8C00;
+  color: #FF9500;
   border: 1px solid rgba(255, 140, 0, 0.3);
   padding: 10px 20px;
   border-radius: 10px;
@@ -375,7 +376,7 @@
 }
 
 .tab-button.active {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
 }
@@ -408,7 +409,7 @@
 }
 
 .content-section {
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 16px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -428,7 +429,7 @@
 }
 
 .see-all-link {
-  color: #FF8C00;
+  color: #FF9500;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
@@ -436,7 +437,7 @@
 }
 
 .see-all-link:hover {
-  color: #FF6600;
+  color: #FF8C00;
   transform: translateX(4px);
 }
 
@@ -585,7 +586,7 @@
 
 .progress-fill {
   height: 100%;
-  background: #FF8C00;
+  background: #FF9500;
   transition: width 0.3s ease;
 }
 
@@ -606,7 +607,7 @@
 }
 
 .resume-btn {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   border: none;
   padding: 10px 24px;
@@ -624,7 +625,7 @@
 
 /* History Content */
 .history-content {
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 16px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -632,7 +633,7 @@
 
 .clear-history-btn {
   background: rgba(255, 140, 0, 0.1);
-  color: #FF8C00;
+  color: #FF9500;
   border: 1px solid rgba(255, 140, 0, 0.3);
   padding: 8px 16px;
   border-radius: 8px;
@@ -743,7 +744,7 @@
 
 /* Favorites Content */
 .favorites-content {
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 16px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -772,7 +773,7 @@
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   border-color: transparent;
 }
@@ -873,7 +874,7 @@
 }
 
 .settings-section {
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #1e293b 50%, #2d3748 75%, #1a1f2e 100%);
   border-radius: 16px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -940,7 +941,7 @@
 }
 
 .save-btn {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
   color: white;
   border: none;
   padding: 12px 32px;
@@ -1025,7 +1026,7 @@
 }
 
 .toggle-switch input:checked + .toggle-slider {
-  background: linear-gradient(135deg, #FF8C00, #FF6600);
+  background: linear-gradient(135deg, #FF9500, #FF8C00);
 }
 
 .toggle-switch input:checked + .toggle-slider:before {
