@@ -17,7 +17,7 @@
   font-weight: 800;
   color: white;
   margin: 0 0 15px 0;
-  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 45%, var(--accent-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -37,7 +37,7 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 140, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 20% 20%, rgba(var(--accent-secondary-rgb), 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
   pointer-events: none;
   z-index: 1;
@@ -100,7 +100,7 @@
 
 .view-all-link:hover,
 .view-all-btn:hover {
-  color: #FF9500;
+  color: var(--accent-primary);
   transform: translateX(5px);
 }
 
@@ -166,8 +166,8 @@
 
 .video-card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(255, 140, 0, 0.5);
-  border-color: rgba(255, 140, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(var(--accent-secondary-rgb), 0.5);
+  border-color: rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .video-card:hover::before {
@@ -206,7 +206,7 @@
 }
 
 .favorite-btn.active {
-  background: rgba(255, 140, 0, 0.8);
+  background: rgba(var(--accent-secondary-rgb), 0.8);
   animation: favorite-pulse 0.3s ease;
 }
 
@@ -283,7 +283,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(255, 140, 0, 0.1));
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(var(--accent-secondary-rgb), 0.1));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -293,7 +293,7 @@
 }
 
 .video-overlay.video-active {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(255, 140, 0, 0.2));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(var(--accent-secondary-rgb), 0.2));
   opacity: 1;
 }
 
@@ -308,7 +308,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 140, 0, 0.95);
+  background: rgba(var(--accent-secondary-rgb), 0.95);
   color: white;
   padding: 8px 14px;
   border-radius: 20px;
@@ -316,7 +316,7 @@
   font-weight: bold;
   letter-spacing: 1px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(var(--accent-secondary-rgb), 0.5);
   animation: slideInRight 0.4s ease-out;
 }
 
@@ -351,7 +351,7 @@
 }
 
 .play-icon {
-  background-color: rgba(255, 140, 0, 0.9);
+  background-color: rgba(var(--accent-secondary-rgb), 0.9);
   color: white;
   width: 70px;
   height: 70px;
@@ -362,7 +362,7 @@
   font-size: 28px;
   transform: scale(0.8);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(255, 140, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(var(--accent-secondary-rgb), 0.5);
   position: relative;
   overflow: hidden;
 }
@@ -381,7 +381,7 @@
 
 .video-card:hover .play-icon {
   transform: scale(1.1);
-  box-shadow: 0 8px 30px rgba(255, 140, 0, 0.7);
+  box-shadow: 0 8px 30px rgba(var(--accent-secondary-rgb), 0.7);
 }
 
 .video-card:hover .play-icon::before {

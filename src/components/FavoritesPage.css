@@ -84,8 +84,8 @@
 
 .favorite-card-page:hover {
   transform: translateY(-10px);
-  border-color: #FF9500;
-  box-shadow: 0 15px 40px rgba(255, 140, 0, 0.4);
+  border-color: var(--accent-primary);
+  box-shadow: 0 15px 40px rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .favorite-video-container-page {
@@ -121,7 +121,7 @@
 }
 
 .remove-favorite-btn:hover {
-  background: rgba(255, 140, 0, 0.9);
+  background: rgba(var(--accent-secondary-rgb), 0.9);
   transform: scale(1.1);
 }
 
@@ -139,7 +139,7 @@
 }
 
 .favorite-badge-page {
-  background: linear-gradient(135deg, #FF9500, #ff6b6b);
+  background: linear-gradient(135deg, var(--accent-primary), #ff6b6b);
   color: white;
   padding: 8px 15px;
   border-radius: 25px;
@@ -147,7 +147,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(var(--accent-secondary-rgb), 0.5);
 }
 
 .favorite-title-page {

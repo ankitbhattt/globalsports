@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import './PostLoginHeader.css';
 import GlobalSportLogo from './GlobalSportLogo';
-import SearchModal from './SearchModal';
 import { useTranslation } from '../contexts/TranslationContext';
 
 interface PostLoginHeaderProps {
@@ -13,9 +13,8 @@ interface PostLoginHeaderProps {
 const PostLoginHeader: React.FC<PostLoginHeaderProps> = ({ onLogout, onNavigate, currentPage }) => {
   const { language, setLanguage, t } = useTranslation();
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
-  // const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
   const languageRef = useRef<HTMLDivElement>(null);
   // const profileRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -85,80 +84,19 @@ const PostLoginHeader: React.FC<PostLoginHeaderProps> = ({ onLogout, onNavigate,
     };
   }, []);
 
-  return (
-    <header className="post-login-header">
-      <div className="header-container">
-        <div className="logo" onClick={() => handleNavigation('home')}>
-          <GlobalSportLogo size="medium" animated={true} />
-        </div>
-        
-        {/* Mobile Header Center Elements */}
-        <div className="mobile-header-center">
-          <button 
-            className="mobile-search-btn"
-            onClick={() => setShowSearch(true)}
-            aria-label="Search"
-          >
-            <span className="search-icon">🔍</span>
-          </button>
-          <div className="mobile-header-indicator">
-            <span className="indicator-dot"></span>
-          </div>
-        </div>
-        
-        {/* Mobile Menu Toggle */}
-        <button 
-          className={`mobile-menu-toggle ${showMobileMenu ? 'active' : ''}`}
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-          aria-label="Toggle menu"
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
-        
-            <nav className="navigation">
-              <button 
-                className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
-                onClick={() => handleNavigation('home')}
-              >
-                {t('header.home')}
-              </button>
-              <button 
-                className={`nav-link ${currentPage === 'videos' ? 'active' : ''}`}
-                onClick={() => handleNavigation('videos')}
-              >
-                {t('header.videos')}
-              </button>
-              <button 
-                className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`}
-                onClick={() => handleNavigation('favorites')}
-              >
-                FAVORITES
-              </button>
-              <button 
-                className="nav-link search-nav-btn"
-                onClick={() => setShowSearch(true)}
-              >
-                <span className="search-nav-icon">🔍</span>
-                Search
-              </button>
-              <button 
-                className="nav-link"
-                onClick={() => {
-                  onLogout();
-                  if (onNavigate) {
-                    onNavigate('home');
-                  }
-                }}
-              >
-                LOGOUT
-              </button>
-            </nav>
-        
-        {/* Mobile Menu */}
-        {showMobileMenu && (
-          <div className="mobile-menu" ref={mobileMenuRef}>
+  const mobileMenuPortal = showMobileMenu
+     ? createPortal(
+         <div
+           className="mobile-menu-overlay"
+           onClick={() => setShowMobileMenu(false)}
+           role="presentation"
+         >
+           <div
+             className="mobile-menu"
+             ref={mobileMenuRef}
+             onClick={(e) => e.stopPropagation()}
+             role="menu"
+           >
             <div className="mobile-menu-content">
               <div className="mobile-menu-nav">
                 <button 
@@ -189,16 +127,7 @@ const PostLoginHeader: React.FC<PostLoginHeaderProps> = ({ onLogout, onNavigate,
                   <span className="mobile-nav-icon">💳</span>
                   {t('header.subscribe')}
                 </button>
-                <button 
-                  className="mobile-nav-link"
-                  onClick={() => {
-                    setShowMobileMenu(false);
-                    setShowSearch(true);
-                  }}
-                >
-                  <span className="mobile-nav-icon">🔍</span>
-                  Search
-                </button>
+                {/* Search disabled */}
                 <button 
                   className="mobile-nav-link"
                   onClick={() => {
@@ -217,30 +146,7 @@ const PostLoginHeader: React.FC<PostLoginHeaderProps> = ({ onLogout, onNavigate,
               <div className="mobile-menu-divider"></div>
               
               {/* <div className="mobile-menu-profile">
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('profile')}>
-                  <span className="mobile-nav-icon">👤</span>
-                  {t('profile.menu.profile')}
-                </button>
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('subscriptions')}>
-                  <span className="mobile-nav-icon">💳</span>
-                  {t('profile.menu.subscriptions')}
-                </button>
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('faq')}>
-                  <span className="mobile-nav-icon">❓</span>
-                  {t('profile.menu.faq')}
-                </button>
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('about')}>
-                  <span className="mobile-nav-icon">ℹ️</span>
-                  {t('profile.menu.about')}
-                </button>
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('help')}>
-                  <span className="mobile-nav-icon">ℹ️</span>
-                  {t('profile.menu.help')}
-                </button>
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('logout')}>
-                  <span className="mobile-nav-icon">↪️</span>
-                  {t('profile.menu.logout')}
-                </button>
+                ...
               </div> */}
               
               <div className="mobile-menu-divider"></div>
@@ -264,7 +170,70 @@ const PostLoginHeader: React.FC<PostLoginHeaderProps> = ({ onLogout, onNavigate,
               </div>
             </div>
           </div>
-        )}
+        </div>,
+        document.body
+      )
+    : null;
+
+  return (
+    <header className="post-login-header">
+      <div className="header-container">
+        <div className="logo" onClick={() => handleNavigation('home')}>
+          <GlobalSportLogo size="medium" animated={true} />
+        </div>
+        
+        {/* Search disabled */}
+        
+        {/* Mobile Menu Toggle */}
+        <button 
+          className={`mobile-menu-toggle ${showMobileMenu ? 'active' : ''}`}
+          onClick={(event) => {
+            event.stopPropagation();
+            setShowMobileMenu((prev) => !prev);
+          }}
+          aria-expanded={showMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+        
+            <nav className="navigation">
+              <button 
+                className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
+                onClick={() => handleNavigation('home')}
+              >
+                {t('header.home')}
+              </button>
+              <button 
+                className={`nav-link ${currentPage === 'videos' ? 'active' : ''}`}
+                onClick={() => handleNavigation('videos')}
+              >
+                {t('header.videos')}
+              </button>
+              <button 
+                className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`}
+                onClick={() => handleNavigation('favorites')}
+              >
+                FAVORITES
+              </button>
+              {/* Search disabled */}
+              <button 
+                className="nav-link"
+                onClick={() => {
+                  onLogout();
+                  if (onNavigate) {
+                    onNavigate('home');
+                  }
+                }}
+              >
+                LOGOUT
+              </button>
+            </nav>
+        
+        {/* Mobile Menu */}
+        {mobileMenuPortal}
         
         <div className="header-actions">
           <div className="language-selector" ref={languageRef}>
@@ -350,8 +319,6 @@ const PostLoginHeader: React.FC<PostLoginHeaderProps> = ({ onLogout, onNavigate,
         </div>
       </div>
       
-      {/* Search Modal */}
-      {showSearch && <SearchModal onClose={() => setShowSearch(false)} />}
     </header>
   );
 };

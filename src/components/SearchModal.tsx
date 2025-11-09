@@ -126,122 +126,139 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose }) => {
 
   return (
     <div className="search-modal-overlay" onClick={onClose}>
-      <div className="search-modal" onClick={(e) => e.stopPropagation()}>
-        <div className="search-modal-header">
-          <div className="search-input-container">
-            <span className="search-icon">🔍</span>
-            <input
-              ref={inputRef}
-              type="text"
-              placeholder="Search games, videos, or pages..."
-              value={searchQuery}
-              onChange={(e) => handleSearch(e.target.value)}
-              className="search-input"
-            />
-            {searchQuery && (
-              <button className="clear-search" onClick={() => setSearchQuery('')}>
-                ×
-              </button>
-            )}
+      <div
+        className="search-modal"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="search-modal-header-bar">
+          <div className="search-header-actions">
+            <span className="search-header-title">Search</span>
+            <div className="search-modal-header">
+              <div className="search-input-container">
+                <span className="search-icon">🔍</span>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  placeholder="Search games, videos, or pages..."
+                  value={searchQuery}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  className="search-input"
+                />
+                {searchQuery && (
+                  <button className="clear-search" onClick={() => setSearchQuery('')}>
+                    ×
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
-          <button className="close-search-modal" onClick={onClose}>
+          <button
+            type="button"
+            className="close-search-btn"
+            onClick={onClose}
+            aria-label="Close search"
+          >
             ×
           </button>
         </div>
 
-        <div className="search-modal-content">
-          {!searchQuery && recentSearches.length > 0 && (
-            <div className="recent-searches">
-              <div className="recent-header">
-                <h3>Recent Searches</h3>
-                <button className="clear-recent" onClick={clearRecentSearches}>
-                  Clear All
-                </button>
-              </div>
-              <div className="recent-list">
-                {recentSearches.map((search, index) => (
-                  <button
-                    key={index}
-                    className="recent-item"
-                    onClick={() => setSearchQuery(search)}
-                  >
-                    <span className="recent-icon">🕒</span>
-                    <span>{search}</span>
+        <div className="search-modal-scroll">
+          <div className="search-modal-content">
+            {!searchQuery && recentSearches.length > 0 && (
+              <div className="recent-searches">
+                <div className="recent-header">
+                  <h3>Recent Searches</h3>
+                  <button className="clear-recent" onClick={clearRecentSearches}>
+                    Clear All
                   </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {!searchQuery && recentSearches.length === 0 && (
-            <div className="search-placeholder">
-              <div className="placeholder-icon">🔍</div>
-              <h3>Search GlobalSport</h3>
-              <p>Find games, videos, and more</p>
-              <div className="popular-searches">
-                <h4>Popular Searches</h4>
-                <div className="popular-tags">
-                  {['Action Games', 'RPG', 'Racing', 'Puzzle', 'Horror', 'Sports'].map(tag => (
+                </div>
+                <div className="recent-list">
+                  {recentSearches.map((search, index) => (
                     <button
-                      key={tag}
-                      className="popular-tag"
-                      onClick={() => setSearchQuery(tag)}
+                      key={index}
+                      className="recent-item"
+                      onClick={() => setSearchQuery(search)}
                     >
-                      {tag}
+                      <span className="recent-icon">🕒</span>
+                      <span>{search}</span>
                     </button>
                   ))}
                 </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {isSearching && (
-            <div className="search-loading">
-              <div className="loading-spinner"></div>
-              <p>Searching...</p>
-            </div>
-          )}
-
-          {searchQuery && !isSearching && searchResults.length === 0 && (
-            <div className="no-results">
-              <div className="no-results-icon">😕</div>
-              <h3>No results found</h3>
-              <p>Try searching for something else</p>
-            </div>
-          )}
-
-          {searchQuery && !isSearching && searchResults.length > 0 && (
-            <div className="search-results">
-              <div className="results-header">
-                <h3>Results ({searchResults.length})</h3>
-              </div>
-              <div className="results-list">
-                {searchResults.map((result) => (
-                  <div key={result.id} className="result-item">
-                    {result.thumbnail ? (
-                      <img src={result.thumbnail} alt={result.title} className="result-thumbnail" />
-                    ) : (
-                      <div className="result-icon-placeholder">
-                        {getTypeIcon(result.type)}
-                      </div>
-                    )}
-                    <div className="result-info">
-                      <div className="result-title-row">
-                        <h4>{result.title}</h4>
-                        <span className={`result-type-badge ${result.type}`}>
-                          {getTypeBadge(result.type)}
-                        </span>
-                      </div>
-                      <p className="result-description">{result.description}</p>
-                      {result.category && (
-                        <span className="result-category">{result.category}</span>
-                      )}
-                    </div>
+            {!searchQuery && recentSearches.length === 0 && (
+              <div className="search-placeholder">
+                <div className="placeholder-icon">🔍</div>
+                <h3>Search GlobalSport</h3>
+                <p>Find games, videos, and more</p>
+                <div className="popular-searches">
+                  <h4>Popular Searches</h4>
+                  <div className="popular-tags">
+                    {['Action Games', 'RPG', 'Racing', 'Puzzle', 'Horror', 'Sports'].map(tag => (
+                      <button
+                        key={tag}
+                        className="popular-tag"
+                        onClick={() => setSearchQuery(tag)}
+                      >
+                        {tag}
+                      </button>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+
+            {isSearching && (
+              <div className="search-loading">
+                <div className="loading-spinner"></div>
+                <p>Searching...</p>
+              </div>
+            )}
+
+            {searchQuery && !isSearching && searchResults.length === 0 && (
+              <div className="no-results">
+                <div className="no-results-icon">😕</div>
+                <h3>No results found</h3>
+                <p>Try searching for something else</p>
+              </div>
+            )}
+
+            {searchQuery && !isSearching && searchResults.length > 0 && (
+              <div className="search-results">
+                <div className="results-header">
+                  <h3>Results ({searchResults.length})</h3>
+                </div>
+                <div className="results-list">
+                  {searchResults.map((result) => (
+                    <div key={result.id} className="result-item">
+                      <div className="result-info">
+                        <div className="result-thumbnail">
+                          {result.thumbnail ? (
+                            <img src={result.thumbnail} alt={result.title} />
+                          ) : (
+                            <div className="result-icon-placeholder">
+                              {getTypeIcon(result.type)}
+                            </div>
+                          )}
+                        </div>
+                        <div className="result-title-row">
+                          <h4>{result.title}</h4>
+                          <span className={`result-type-badge ${result.type}`}>
+                            {getTypeBadge(result.type)}
+                          </span>
+                        </div>
+                        <p className="result-description">{result.description}</p>
+                        {result.category && (
+                          <span className="result-category">{result.category}</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

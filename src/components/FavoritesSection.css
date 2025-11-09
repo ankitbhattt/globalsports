@@ -17,7 +17,7 @@
   font-weight: bold;
   color: white;
   margin: 0;
-  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 45%, var(--accent-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -35,7 +35,7 @@
 }
 
 .view-all-btn:hover {
-  color: #FF9500;
+  color: var(--accent-primary);
   transform: translateX(5px);
 }
 
@@ -56,8 +56,8 @@
 
 .favorite-card:hover {
   transform: translateY(-8px);
-  border-color: #FF9500;
-  box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 30px rgba(var(--accent-secondary-rgb), 0.3);
 }
 
 .favorite-video-container {
@@ -97,7 +97,7 @@
 }
 
 .favorite-badge {
-  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 45%, var(--accent-blue) 100%);
   color: white;
   padding: 5px 12px;
   border-radius: 20px;
@@ -105,7 +105,7 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 10px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 2px 10px rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .favorite-title {
