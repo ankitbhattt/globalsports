@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import './Header.css';
 import GlobalSportLogo from './GlobalSportLogo';
-import SearchModal from './SearchModal';
 import { useTranslation } from '../contexts/TranslationContext';
 
 interface HeaderProps {
@@ -11,11 +11,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   const { language, setLanguage, t } = useTranslation();
-  // const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  // const profileRef = useRef<HTMLDivElement>(null);
   const languageRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -30,16 +27,29 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     setShowLanguageDropdown(false);
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      // if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
-      //   setShowProfileDropdown(false);
-      // }
+    const handlePointerDown = (event: PointerEvent) => {
       if (languageRef.current && !languageRef.current.contains(event.target as Node)) {
         setShowLanguageDropdown(false);
       }
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!showMobileMenu) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
         const target = event.target as HTMLElement;
         if (!target.closest('.mobile-menu-toggle')) {
           setShowMobileMenu(false);
@@ -47,11 +57,32 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setShowMobileMenu(false);
+      }
     };
-  }, []);
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [showMobileMenu]);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    if (showMobileMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [showMobileMenu]);
 
   // const handleProfileAction = (action: string) => {
   //   setShowProfileDropdown(false);
@@ -74,75 +105,19 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     setShowMobileMenu(false);
   };
 
-  return (
-    <header className="header">
-      <div className="header-container">
-        <div className="logo" onClick={() => handleNavigation('home')}>
-          <GlobalSportLogo size="medium" animated={true} />
-        </div>
-        
-        {/* Mobile Header Center Elements */}
-        <div className="mobile-header-center">
-          <button 
-            className="mobile-search-btn"
-            onClick={() => setShowSearch(true)}
-            aria-label="Search"
-          >
-            <span className="search-icon">🔍</span>
-          </button>
-          <div className="mobile-header-indicator">
-            <span className="indicator-dot"></span>
-          </div>
-        </div>
-        
-        {/* Mobile Menu Toggle */}
-        <button 
-          className={`mobile-menu-toggle ${showMobileMenu ? 'active' : ''}`}
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-          aria-label="Toggle menu"
+  const mobileMenuPortal = showMobileMenu
+    ? createPortal(
+        <div
+          className="mobile-menu-overlay"
+          onClick={() => setShowMobileMenu(false)}
+          role="presentation"
         >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
-        
-        <nav className="navigation">
-          <button 
-            className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
-            onClick={() => handleNavigation('home')}
+          <div
+            className="mobile-menu"
+            ref={mobileMenuRef}
+            onClick={(e) => e.stopPropagation()}
+            role="menu"
           >
-            {t('header.home')}
-          </button>
-          <button 
-            className={`nav-link ${currentPage === 'videos' ? 'active' : ''}`}
-            onClick={() => handleNavigation('videos')}
-          >
-            {t('header.videos')}
-          </button>
-          <button 
-            className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`}
-            onClick={() => handleNavigation('favorites')}
-          >
-            FAVORITES
-          </button>
-          <button 
-            className="nav-link search-nav-btn"
-            onClick={() => setShowSearch(true)}
-          >
-            <span className="search-nav-icon">🔍</span>
-            Search
-          </button>
-          <button 
-            className="nav-link"
-            onClick={() => handleNavigation('login')}
-          >
-            LOGIN
-          </button>
-        </nav>
-        
-        {/* Mobile Menu */}
-        {showMobileMenu && (
-          <div className="mobile-menu" ref={mobileMenuRef}>
             <div className="mobile-menu-content">
               <div className="mobile-menu-nav">
                 <button 
@@ -177,7 +152,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                   className="mobile-nav-link"
                   onClick={() => {
                     setShowMobileMenu(false);
-                    setShowSearch(true);
+                    // setShowSearch(true); // Removed search state
                   }}
                 >
                   <span className="mobile-nav-icon">🔍</span>
@@ -195,18 +170,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               <div className="mobile-menu-divider"></div>
               
               {/* <div className="mobile-menu-profile">
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('login')}>
-                  <span className="mobile-nav-icon">🔑</span>
-                  {t('login.title')}
-                </button>
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('faq')}>
-                  <span className="mobile-nav-icon">❓</span>
-                  {t('profile.menu.faq')}
-                </button>
-                <button className="mobile-nav-link" onClick={() => handleProfileAction('about')}>
-                  <span className="mobile-nav-icon">ℹ️</span>
-                  {t('profile.menu.about')}
-                </button>
+                ...
               </div> */}
               
               <div className="mobile-menu-divider"></div>
@@ -230,7 +194,72 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </div>
             </div>
           </div>
-        )}
+        </div>,
+        document.body
+      )
+    : null;
+
+  return (
+    <header className="header">
+      <div className="header-container">
+        <div className="logo" onClick={() => handleNavigation('home')}>
+          <GlobalSportLogo size="medium" animated={true} />
+        </div>
+        
+        {/* Search disabled for now */}
+        
+        {/* Mobile Menu Toggle */}
+        <button 
+          className={`mobile-menu-toggle ${showMobileMenu ? 'active' : ''}`}
+          onClick={(event) => {
+            event.stopPropagation();
+            setShowMobileMenu((prev) => !prev);
+          }}
+          aria-expanded={showMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
+        
+        <nav className="navigation">
+          <button 
+            className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
+            onClick={() => handleNavigation('home')}
+          >
+            {t('header.home')}
+          </button>
+          <button 
+            className={`nav-link ${currentPage === 'videos' ? 'active' : ''}`}
+            onClick={() => handleNavigation('videos')}
+          >
+            {t('header.videos')}
+          </button>
+          <button 
+            className={`nav-link ${currentPage === 'favorites' ? 'active' : ''}`}
+            onClick={() => handleNavigation('favorites')}
+          >
+            FAVORITES
+          </button>
+          {/* <button 
+            className="nav-link search-nav-btn"
+            onClick={() => {
+              // setShowSearch(true); // Removed search state
+            }}
+          >
+            <span className="search-nav-icon">🔍</span>
+            Search
+          </button> */}
+          <button 
+            className="nav-link"
+            onClick={() => handleNavigation('login')}
+          >
+            LOGIN
+          </button>
+        </nav>
+        
+        {mobileMenuPortal}
         
         <div className="header-actions">
           <div className="language-selector" ref={languageRef}>
@@ -299,9 +328,6 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           </div> */}
         </div>
       </div>
-      
-      {/* Search Modal */}
-      {showSearch && <SearchModal onClose={() => setShowSearch(false)} />}
     </header>
   );
 };

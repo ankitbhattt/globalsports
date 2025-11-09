@@ -110,7 +110,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 140, 0, 0.1), rgba(59, 130, 246, 0.1));
+  background: linear-gradient(45deg, rgba(var(--accent-secondary-rgb), 0.1), rgba(59, 130, 246, 0.1));
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 15px;

@@ -68,7 +68,7 @@
 
 .play-button {
   font-size: 3rem;
-  color: #FF9500;
+  color: var(--accent-primary);
   margin-bottom: 20px;
   display: inline-block;
   transition: transform 0.3s ease;

@@ -130,7 +130,7 @@ const OTPModal: React.FC<OTPModalProps> = ({ phoneNumber, onVerify, onClose }) =
             onClick={handleVerify}
             disabled={!otp.every(digit => digit !== '')}
             style={{
-              background: 'linear-gradient(135deg, #FF9500 0%, #FF8C00 100%)',
+              background: 'var(--gradient-primary)',
               opacity: !otp.every(digit => digit !== '') ? 0.6 : 1
             }}
           >

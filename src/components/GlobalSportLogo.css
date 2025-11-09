@@ -1,203 +1,46 @@
 .globalsport-logo {
-  display: flex;
+  --logo-height: 52px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', 'Arial', sans-serif;
+  height: var(--logo-height);
   user-select: none;
-  cursor: pointer;
 }
 
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.basketball-wings-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.basketball-svg {
-  width: 100%;
-  height: auto;
+.logo-image {
   display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.basketball-circle {
-  transition: all 0.3s ease;
+.globalsport-logo.small {
+  --logo-height: 42px;
 }
 
-.basketball-lines {
-  transition: all 0.3s ease;
+.globalsport-logo.medium {
+  --logo-height: 58px;
 }
 
-.wing {
-  transition: all 0.3s ease;
+.globalsport-logo.large {
+  --logo-height: 64px;
 }
 
-.wing-path {
-  transition: all 0.3s ease;
+.globalsport-logo.animated .logo-image:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  line-height: 1.1;
-}
-
-.text-global {
-  color: #FF9500;
-  font-size: 20px;
-  font-weight: 900;
-  text-shadow: 0 2px 8px rgba(255, 149, 0, 0.4);
-  transition: all 0.3s ease;
-  background: linear-gradient(135deg, #FF9500 0%, #FF9500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-sport {
-  color: #007BFF;
-  font-size: 20px;
-  font-weight: 900;
-  text-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
-  transition: all 0.3s ease;
-  background: linear-gradient(135deg, #007BFF 0%, #0056B3 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Size variations */
-.globalsport-logo.small .basketball-svg {
-  width: 70px;
-}
-
-.globalsport-logo.small .text-global,
-.globalsport-logo.small .text-sport {
-  font-size: 13px;
-  letter-spacing: 2px;
-}
-
-.globalsport-logo.medium .basketball-svg {
-  width: 90px;
-}
-
-.globalsport-logo.medium .text-global,
-.globalsport-logo.medium .text-sport {
-  font-size: 18px;
-  letter-spacing: 3px;
-}
-
-.globalsport-logo.large .basketball-svg {
-  width: 140px;
-}
-
-.globalsport-logo.large .text-global,
-.globalsport-logo.large .text-sport {
-  font-size: 28px;
-  letter-spacing: 4px;
-}
-
-/* Animation */
-.globalsport-logo.animated .basketball-circle {
-  animation: basketballPulse 3s ease-in-out infinite;
-}
-
-.globalsport-logo.animated .wing {
-  animation: wingFlutter 4s ease-in-out infinite;
-}
-
-.globalsport-logo.animated .left-wing {
-  animation-delay: 0s;
-}
-
-.globalsport-logo.animated .right-wing {
-  animation-delay: 0.2s;
-}
-
-.globalsport-logo.animated:hover .basketball-circle {
-  animation: basketballRotate 0.8s ease-in-out;
-  transform: scale(1.05);
-}
-
-.globalsport-logo.animated:hover .wing {
-  animation: wingFlutter 0.6s ease-in-out infinite;
-}
-
-.globalsport-logo.animated:hover .text-global {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-.globalsport-logo.animated:hover .text-sport {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-@keyframes basketballPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
-}
-
-@keyframes basketballRotate {
-  0% {
-    transform: rotate(0deg) scale(1.05);
-  }
-  100% {
-    transform: rotate(360deg) scale(1.05);
-  }
-}
-
-@keyframes wingFlutter {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  25% {
-    transform: translateY(-3px) scale(1.03);
-  }
-  75% {
-    transform: translateY(3px) scale(0.97);
-  }
-}
-
-/* Mobile Responsive */
 @media (max-width: 768px) {
-  .globalsport-logo.medium .basketball-svg {
-    width: 75px;
-  }
-  
-  .globalsport-logo.medium .text-global,
-  .globalsport-logo.medium .text-sport {
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
-  
-  .globalsport-logo.medium .logo-container {
-    gap: 5px;
+  .globalsport-logo.medium {
+    --logo-height: 50px;
   }
 }
 
 @media (max-width: 480px) {
-  .globalsport-logo.medium .basketball-svg {
-    width: 65px;
-  }
-  
-  .globalsport-logo.medium .text-global,
-  .globalsport-logo.medium .text-sport {
-    font-size: 14px;
-    letter-spacing: 1.5px;
+  .globalsport-logo.medium {
+    --logo-height: 44px;
   }
 }

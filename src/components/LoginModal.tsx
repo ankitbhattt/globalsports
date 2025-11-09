@@ -112,7 +112,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ onSubmit, onClose }) => {
             className="send-otp-button"
             disabled={!validateMobileNumber(phone)}
             style={{
-              background: 'linear-gradient(135deg, #FF9500 0%, #FF8C00 100%)',
+              background: 'var(--gradient-primary)',
               opacity: !validateMobileNumber(phone) ? 0.6 : 1
             }}
           >
