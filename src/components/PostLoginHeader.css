@@ -523,7 +523,7 @@
     margin-right: 0;
     transform: scale(1.0);
     flex-shrink: 0;
-    order: 2;
+    order: 1;
   }
   
   .mobile-header-center {
@@ -532,7 +532,7 @@
     gap: 12px;
     flex: 1;
     justify-content: center;
-    order: 3;
+    order: 2;
   }
   
   .mobile-search-btn {
@@ -589,7 +589,8 @@
     padding: 8px;
     flex-shrink: 0;
     transition: all 0.2s ease;
-    order: 1;
+    order: 3;
+    margin-left: auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
   
