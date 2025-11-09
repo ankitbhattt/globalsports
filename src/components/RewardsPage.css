@@ -208,15 +208,15 @@
 }
 
 .category-btn:hover {
-  background: rgba(255, 140, 0, 0.2);
-  border-color: rgba(255, 140, 0, 0.4);
+  background: rgba(var(--accent-secondary-rgb), 0.2);
+  border-color: rgba(var(--accent-secondary-rgb), 0.4);
   transform: translateY(-2px);
 }
 
 .category-btn.active {
-  background: linear-gradient(135deg, #FF9500, #FF8C00);
-  border-color: #FF9500;
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+  background: var(--gradient-primary);
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 15px rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .category-icon {
@@ -349,7 +349,7 @@
 .claim-btn {
   width: 100%;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #FF9500, #FF8C00);
+  background: var(--gradient-primary);
   border: none;
   border-radius: 12px;
   color: white;
@@ -364,9 +364,9 @@
 }
 
 .claim-btn:hover {
-  background: linear-gradient(135deg, #ef4444, #FF9500);
+  background: linear-gradient(135deg, #ef4444, var(--accent-secondary));
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .claim-icon {

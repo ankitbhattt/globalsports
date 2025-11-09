@@ -84,13 +84,13 @@
 }
 
 .category-item:hover {
-  background-color: rgba(255, 140, 0, 0.1);
-  border-left-color: #FF9500;
-  color: #FF9500;
+  background-color: rgba(var(--accent-secondary-rgb), 0.1);
+  border-left-color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 .category-item:active {
-  background-color: rgba(255, 140, 0, 0.2);
+  background-color: rgba(var(--accent-secondary-rgb), 0.2);
 }
 
 /* Mobile Responsive */

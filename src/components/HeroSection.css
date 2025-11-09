@@ -38,7 +38,7 @@
 }
 
 .play-button {
-  background-color: #FF9500;
+  background-color: var(--accent-primary);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -47,13 +47,13 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--accent-secondary-rgb), 0.3);
 }
 
 .play-button:hover {
-  background-color: #FF8C00;
+  background-color: var(--accent-secondary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .hero-video {
@@ -79,7 +79,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 140, 0, 0.1), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(45deg, rgba(var(--accent-secondary-rgb), 0.1), rgba(0, 0, 0, 0.3));
   border-radius: 10px;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .carousel-arrow:hover {
-  background-color: rgba(255, 140, 0, 0.8);
+  background-color: rgba(var(--accent-secondary-rgb), 0.8);
   transform: scale(1.1);
 }
 
@@ -134,7 +134,7 @@
 }
 
 .indicator.active {
-  background-color: #FF9500;
+  background-color: var(--accent-primary);
   transform: scale(1.2);
 }
 

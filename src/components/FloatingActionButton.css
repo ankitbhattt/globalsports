@@ -9,14 +9,14 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FF9500 0%, #FF9500 100%);
+  background: var(--gradient-orange);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 
-    0 4px 20px rgba(255, 140, 0, 0.4),
+    0 4px 20px rgba(var(--accent-secondary-rgb), 0.4),
     0 8px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -42,7 +42,7 @@
 .fab-main:hover {
   transform: scale(1.1);
   box-shadow: 
-    0 6px 25px rgba(255, 140, 0, 0.5),
+    0 6px 25px rgba(var(--accent-secondary-rgb), 0.5),
     0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -120,10 +120,10 @@
 
 .fab-sub-action:hover {
   transform: scale(1.1);
-  border-color: #FF9500;
+  border-color: var(--accent-primary);
   box-shadow: 
-    0 6px 20px rgba(255, 140, 0, 0.3),
-    0 0 0 2px rgba(255, 140, 0, 0.2);
+    0 6px 20px rgba(var(--accent-secondary-rgb), 0.3),
+    0 0 0 2px rgba(var(--accent-secondary-rgb), 0.2);
 }
 
 .fab-sub-action:active {

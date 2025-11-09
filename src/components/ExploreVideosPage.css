@@ -13,7 +13,7 @@
 .explore-main-title {
   font-size: 3.5rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 45%, var(--accent-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -26,7 +26,7 @@
 
 .title-icon {
   font-size: 3.5rem;
-  filter: drop-shadow(0 4px 8px rgba(255, 140, 0, 0.4));
+  filter: drop-shadow(0 4px 8px rgba(var(--accent-secondary-rgb), 0.4));
 }
 
 .explore-subtitle {
@@ -57,13 +57,13 @@
 
 .category-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(255, 140, 0, 0.5);
-  box-shadow: 0 20px 40px rgba(255, 140, 0, 0.3);
+  border-color: rgba(var(--accent-secondary-rgb), 0.5);
+  box-shadow: 0 20px 40px rgba(var(--accent-secondary-rgb), 0.3);
 }
 
 .category-card.selected {
-  border-color: #FF9500;
-  box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 30px rgba(var(--accent-secondary-rgb), 0.5);
 }
 
 .category-thumbnail {
@@ -97,7 +97,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(59, 130, 246, 0.9));
+  background: linear-gradient(135deg, rgba(var(--accent-secondary-rgb), 0.9), rgba(59, 130, 246, 0.9));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +165,7 @@
 }
 
 .explore-btn {
-  background: linear-gradient(135deg, #FF9500, #FF8C00);
+  background: var(--gradient-primary);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -180,9 +180,9 @@
 }
 
 .explore-btn:hover {
-  background: linear-gradient(135deg, #FF8C00, #FF8C00);
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent-secondary));
   transform: translateX(5px);
-  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .explore-btn span {
@@ -234,14 +234,14 @@
 
 .preview-video-card:hover {
   transform: scale(1.05);
-  border-color: #FF9500;
-  box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+  border-color: var(--accent-primary);
+  box-shadow: 0 15px 30px rgba(var(--accent-secondary-rgb), 0.3);
 }
 
 .preview-thumbnail {
   width: 100%;
   aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #FF9500, #f97316);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
   position: relative;
   object-fit: cover;
   display: block;
@@ -258,7 +258,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(255, 140, 0, 0.9);
+  background: rgba(var(--accent-secondary-rgb), 0.9);
   color: white;
   display: flex;
   align-items: center;
@@ -269,7 +269,7 @@
 
 .preview-video-card:hover .preview-play-btn {
   transform: scale(1.2);
-  background: #FF9500;
+  background: var(--accent-primary);
 }
 
 .preview-duration {

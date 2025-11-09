@@ -20,7 +20,7 @@
   font-weight: 900;
   color: white;
   margin: 0 0 10px 0;
-  background: linear-gradient(135deg, #FF9500 0%, #FF9500 50%, #007BFF 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 45%, var(--accent-blue) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -65,16 +65,16 @@
 }
 
 .filter-btn:hover {
-  background: rgba(255, 140, 0, 0.15);
-  border-color: rgba(255, 140, 0, 0.4);
+  background: rgba(var(--accent-secondary-rgb), 0.15);
+  border-color: rgba(var(--accent-secondary-rgb), 0.4);
   color: white;
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, #FF9500, #FF8C00);
-  border-color: #FF9500;
+  background: var(--gradient-primary);
+  border-color: var(--accent-primary);
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--accent-secondary-rgb), 0.3);
 }
 
 .filter-icon {
@@ -101,7 +101,7 @@
 .video-card-new:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 140, 0, 0.4);
+  border-color: rgba(var(--accent-secondary-rgb), 0.4);
 }
 
 .video-wrapper {
@@ -145,7 +145,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(255, 140, 0, 0.9);
+  background: rgba(var(--accent-secondary-rgb), 0.9);
   color: white;
   padding: 5px 12px;
   border-radius: 6px;
